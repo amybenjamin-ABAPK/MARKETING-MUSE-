@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Marketing Muse: social media, content and marketing for Cape Town and South African businesses. Get a free Instagram audit.">
+<style>*,*::before,*::after{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Marketing Muse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one narrow phone-first column, link-in-bio rhythm — name, offer, audit form, then proof of method */
+:root{
+  --bg:#F5F4F1;        /* off-white */
+  --surface:#FFFFFF;
+  --ink:#0E0E0E;       /* black */
+  --muted:#6B6E72;     /* grey with a cool bias */
+  --line:#DCDFE2;
+  --ice:#C9D6DF;       /* icy blue */
+  --steel:#5F7D93;     /* readable blue for text and focus */
+  --btn-bg:#0E0E0E; --btn-fg:#F5F4F1;
+  --display:"Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --body:"DM Sans", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1012; --surface:#17191C; --ink:#F2F1EE; --muted:#9BA1A7; --line:#2A2E33;
+  --ice:#3A4A56; --steel:#A9C1D2; --btn-bg:#F2F1EE; --btn-fg:#0F1012; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1012; --surface:#17191C; --ink:#F2F1EE; --muted:#9BA1A7; --line:#2A2E33;
+  --ice:#3A4A56; --steel:#A9C1D2; --btn-bg:#F2F1EE; --btn-fg:#0F1012; color-scheme:dark}
+
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:520px;margin:0 auto;padding-inline:20px;padding-block:40px 56px;display:flex;flex-direction:column;gap:40px}
+
+.mark{display:flex;align-items:center;gap:12px}
+.mono{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;
+  font-family:var(--display);font-size:26px;font-weight:600;background:var(--surface);position:relative}
+.mono::after{content:"";position:absolute;top:9px;right:9px;width:7px;height:7px;background:var(--steel);
+  clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+.brand{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.loc{font-size:13px;color:var(--muted)}
+
+h1{font-family:var(--display);font-weight:500;font-size:clamp(38px,9vw,50px);line-height:1.02;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1 em{font-style:italic;background:linear-gradient(transparent 62%,var(--ice) 62%,var(--ice) 92%,transparent 92%)}
+.lede{margin:16px 0 0;color:var(--muted);max-width:38ch}
+
+.links{display:flex;flex-direction:column;gap:10px}
+.btn{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 18px;border-radius:999px;
+  text-decoration:none;font-weight:500;font-size:15px;border:1px solid var(--ink);color:var(--ink);background:transparent;
+  cursor:pointer;font-family:inherit;width:100%;text-align:left;transition:background .15s,color .15s}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.btn.primary{background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg)}
+.btn.primary:hover{opacity:.88}
+.btn span:last-child{font-size:18px;line-height:1}
+.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--steel);outline-offset:3px}
+
+.label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 14px}
+h2{font-family:var(--display);font-weight:500;font-size:32px;line-height:1.1;margin:0 0 8px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 22px;font-size:15px}
+
+.audit{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px 22px}
+form{display:flex;flex-direction:column;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}
+label{font-size:13px;font-weight:600}
+input,select,textarea{font:inherit;font-size:15px;color:var(--ink);background:var(--bg);border:1px solid var(--line);
+  border-radius:12px;padding:12px 14px;width:100%;box-sizing:border-box}
+textarea{min-height:84px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:420px){.row{grid-template-columns:1fr}}
+.err{color:#B4232C;font-size:13px;margin:0}
+:root[data-theme="dark"] .err{color:#F08A8F}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .err{color:#F08A8F}}
+
+.done{display:flex;flex-direction:column;gap:14px}
+.done p{margin:0}
+.msg{font-family:var(--body);font-size:14px;background:var(--bg);border:1px dashed var(--line);border-radius:12px;padding:14px;white-space:pre-wrap;min-height:120px}
+.small{font-size:13px;color:var(--muted)}
+.linkbtn{background:none;border:0;padding:0;font:inherit;color:var(--steel);text-decoration:underline;cursor:pointer;font-size:13px}
+
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:34px 1fr;gap:12px;counter-increment:s}
+.steps li::before{content:counter(s);font-family:var(--display);font-size:26px;line-height:1;color:var(--steel)}
+.steps b{display:block;font-weight:600}
+.steps span{color:var(--muted);font-size:15px}
+
+.services{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.svc{background:var(--bg);padding:18px 16px;min-width:0}
+.svc h3{font-family:var(--display);font-weight:500;font-size:24px;margin:0 0 4px}
+.svc p{margin:0;font-size:14px;color:var(--muted)}
+
+.for{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.for li{font-size:13px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+
+footer{border-top:1px solid var(--line);padding-top:20px;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a{color:var(--ink)}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+<main class="wrap">
+  <header>
+    <div class="mark">
+      <div class="mono" aria-hidden="true">M</div>
+      <div>
+        <div class="brand">Marketing Muse</div>
+        <div class="loc">Cape Town · working remotely across SA</div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h1>Your brand’s marketing department, <em>minus the full-time salary.</em></h1>
+    <p class="lede">Social media, content and marketing for businesses that are great in person and want to look it online.</p>
+  </section>
+
+  <nav class="links" aria-label="Quick links">
+    <a class="btn primary" href="#audit"><span>Get a free Instagram audit</span><span aria-hidden="true">↓</span></a>
+    <a class="btn" href="#services"><span>What I do</span><span aria-hidden="true">↓</span></a>
+    <a class="btn" href="https://wa.me/27502078213?text=Hi%20Marketing%20Muse%2C%20I%27d%20like%20to%20chat%20about%20marketing%20for%20my%20business." target="_blank" rel="noopener"><span>WhatsApp me</span><span aria-hidden="true">↗</span></a>
+    <a class="btn" href="https://ig.me/m/ab_marketingmuse.co" target="_blank" rel="noopener"><span>Message me on Instagram</span><span aria-hidden="true">↗</span></a>
+    <a class="btn" href="mailto:ab.marketing220@gmail.com?subject=Marketing%20enquiry"><span>Email ab.marketing220@gmail.com</span><span aria-hidden="true">↗</span></a>
+  </nav>
+
+  <section id="audit" class="audit" aria-labelledby="audit-h">
+    <p class="label">Free · 15 minutes</p>
+    <h2 id="audit-h">Your Instagram, reviewed.</h2>
+    <p class="sub">A short video walkthrough of your profile with three specific fixes you can make yourself. No pitch attached.</p>
+
+    <form id="auditForm" novalidate>
+      <div class="row">
+        <div class="field">
+          <label for="biz">Business name</label>
+          <input id="biz" name="biz" autocomplete="organization" placeholder="e.g. Bree Street Bakery" required>
+        </div>
+        <div class="field">
+          <label for="handle">Instagram handle</label>
+          <input id="handle" name="handle" placeholder="@yourbusiness" autocapitalize="off" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="type">What kind of business?</label>
+        <select id="type" name="type">
+          <option>Café or restaurant</option>
+          <option>Salon or beauty</option>
+          <option>Fashion or lifestyle brand</option>
+          <option>Hotel or hospitality</option>
+          <option>Online store</option>
+          <option>Wellness or fitness</option>
+          <option>Professional services</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="struggle">What’s the hardest part of your marketing right now?</label>
+        <textarea id="struggle" name="struggle" placeholder="e.g. We post when we remember, and it never brings in bookings."></textarea>
+      </div>
+      <p class="err" id="err" hidden>Add your business name and Instagram handle so I know whose profile to look at.</p>
+      <button class="btn primary" type="submit"><span>Request my audit</span><span aria-hidden="true">→</span></button>
+      <p class="small">Next, you choose to send it on WhatsApp or Instagram.</p>
+    </form>
+
+    <div class="done" id="done" hidden>
+      <p><b>Almost there.</b> Your request is ready. Send it whichever way suits you.</p>
+      <div class="msg" id="msg" tabindex="0"></div>
+      <a class="btn primary" id="openWa" href="https://wa.me/27502078213" target="_blank" rel="noopener"><span>Send on WhatsApp</span><span aria-hidden="true">↗</span></a>
+      <a class="btn" id="openIg" href="https://ig.me/m/ab_marketingmuse.co" target="_blank" rel="noopener"><span>Send on Instagram</span><span aria-hidden="true">↗</span></a>
+      <p class="small" id="copyNote">WhatsApp fills in the message for you. For Instagram, paste the copied message into the chat.</p>
+      <button class="linkbtn" type="button" id="edit">Edit my details</button>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">How the audit works</p>
+    <ol class="steps">
+      <li><div><b>You send your handle</b><span>Using the form above, or just DM me “AUDIT”.</span></div></li>
+      <li><div><b>I record a walkthrough</b><span>Your bio, highlights, last nine posts and how people get from your profile to you.</span></div></li>
+      <li><div><b>You get three fixes</b><span>Specific changes you can make this week. If you’d rather hand it over, we talk.</span></div></li>
+    </ol>
+  </section>
+
+  <section id="services">
+    <p class="label">What I do</p>
+    <h2>Monthly marketing, handled.</h2>
+    <p class="sub">One person who learns your business and runs your marketing like it’s part of the team.</p>
+    <div class="services">
+      <div class="svc"><h3>Plan</h3><p>A monthly content calendar built around what you’re selling.</p></div>
+      <div class="svc"><h3>Create</h3><p>Posts, carousels, Reels and captions in your brand’s voice.</p></div>
+      <div class="svc"><h3>Manage</h3><p>Posting on schedule, comments answered, grid kept consistent.</p></div>
+      <div class="svc"><h3>Report</h3><p>Monthly: what brought enquiries, what we stop, what we try next.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">Who I work with</p>
+    <ul class="for">
+      <li>Cafés &amp; restaurants</li><li>Salons &amp; beauty</li><li>Boutique hotels</li>
+      <li>Fashion &amp; lifestyle</li><li>Online stores</li><li>Wellness &amp; fitness</li><li>Growing SA businesses</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>Marketing Muse · Cape Town · ab.marketing220@gmail.com</span>
+    <a href="https://www.instagram.com/ab_marketingmuse.co/" target="_blank" rel="noopener">@ab_marketingmuse.co</a>
+  </footer>
+</main>
+
+<script>
+(function(){
+  var form=document.getElementById('auditForm'), done=document.getElementById('done'),
+      msg=document.getElementById('msg'), err=document.getElementById('err'), note=document.getElementById('copyNote');
+  function build(){
+    var h=document.getElementById('handle').value.trim(); if(h && h[0]!=='@') h='@'+h;
+    var s=document.getElementById('struggle').value.trim();
+    return 'Hi Marketing Muse! I\'d like a free Instagram audit.\n\n'+
+      'Business: '+document.getElementById('biz').value.trim()+'\n'+
+      'Instagram: '+h+'\n'+
+      'Type: '+document.getElementById('type').value+
+      (s ? '\nBiggest struggle: '+s : '');
+  }
+  function selectMsg(){ try{ var r=document.createRange(); r.selectNodeContents(msg); var sel=getSelection(); sel.removeAllRanges(); sel.addRange(r);}catch(e){} }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!document.getElementById('biz').value.trim() || !document.getElementById('handle').value.trim()){ err.hidden=false; return; }
+    err.hidden=true;
+    var text=build(); msg.textContent=text;
+    document.getElementById('openWa').href='https://wa.me/27502078213?text='+encodeURIComponent(text);
+    form.hidden=true; done.hidden=false;
+    var copied=false;
+    try{
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){ note.textContent='WhatsApp fills in the message for you. For Instagram, it’s copied: just paste and send.'; },
+          function(){ selectMsg(); note.textContent='WhatsApp fills in the message for you. For Instagram, copy the message first, then paste it into the chat.'; });
+        copied=true;
+      }
+    }catch(x){}
+    if(!copied){ selectMsg(); note.textContent='WhatsApp fills in the message for you. For Instagram, copy the message first, then paste it into the chat.'; }
+    done.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+  document.getElementById('edit').addEventListener('click',function(){ done.hidden=true; form.hidden=false; });
+})();
+</script>
+
+</body>
+</html>
